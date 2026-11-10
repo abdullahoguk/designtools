@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design Tools · Abdullah Öğük</title>
+  <meta name="description" content="Tarayıcıda çalışan küçük tasarım araçları ve üreteçler. Small browser-based design tools and generators.">
+  <meta name="author" content="Abdullah Öğük">
+  <script>
+    (function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}})();
+  </script>
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231b1a18'/%3E%3Cpath d='M8 0v32M16 0v32M24 0v32M0 8h32M0 16h32M0 24h32' stroke='%23f2efe8' stroke-width='1' opacity='.5'/%3E%3C/svg%3E">
+  <style>
+    :root { --bg:#f2efe8; --fg:#1b1a18; --muted:#6f6a61; --faint:#d9d4c9; --accent:#b4561f;
+      --font: ui-monospace,"SFMono-Regular","JetBrains Mono","IBM Plex Mono",Menlo,Consolas,"Liberation Mono",monospace;
+      --size-s:.75rem; --size-m:.875rem; --size-l:1.375rem; --unit:.5rem; --gutter:clamp(1rem,5vw,4rem); }
+    @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#1b1a18; --fg:#e9e5dc; --muted:#8d887e; --faint:#34322e; --accent:#e08a4a; } }
+    :root[data-theme="dark"] { --bg:#1b1a18; --fg:#e9e5dc; --muted:#8d887e; --faint:#34322e; --accent:#e08a4a; }
+    *,*::before,*::after { box-sizing:border-box; }
+    html { background:var(--bg); color:var(--fg); font-family:var(--font); -webkit-text-size-adjust:100%; }
+    body { margin:0; min-height:100svh; display:flex; flex-direction:column; font-size:var(--size-m); line-height:1.75; }
+    h1,h2,p,ul { margin:0; padding:0; font-size:inherit; } ul { list-style:none; }
+    a { color:inherit; text-decoration:underline; text-decoration-color:var(--muted); text-decoration-thickness:1px; text-underline-offset:.3em; transition:color .15s, text-decoration-color .15s; }
+    a:hover { color:var(--accent); text-decoration-color:var(--accent); }
+    :focus-visible { outline:1px solid var(--accent); outline-offset:3px; }
+    .muted { color:var(--muted); }
+    .en { display:block; font-size:var(--size-s); color:var(--muted); opacity:.75; line-height:1.5; }
+    .top { display:grid; grid-template-columns:auto 1fr auto; gap:calc(var(--unit)*4); align-items:baseline; padding:calc(var(--unit)*4) var(--gutter); font-size:var(--size-s); }
+    .brand { font-weight:600; text-decoration:none; letter-spacing:.02em; }
+    .theme { appearance:none; border:0; background:none; padding:0; font:inherit; color:var(--muted); cursor:pointer; }
+    .theme:hover { color:var(--accent); }
+    main { flex:1; padding:calc(var(--unit)*6) var(--gutter) calc(var(--unit)*10); max-width:72rem; width:100%; }
+    .head { display:grid; grid-template-columns:repeat(12,1fr); gap:calc(var(--unit)*2); margin-bottom:calc(var(--unit)*8); }
+    .head h1 { grid-column:1 / span 12; font-size:var(--size-l); font-weight:600; line-height:1.4; }
+    .head p { grid-column:1 / span 7; margin-top:calc(var(--unit)*2); }
+    .tools { border-top:1px solid var(--faint); }
+    .tool { display:grid; grid-template-columns:3rem minmax(0,1fr) 12rem; gap:calc(var(--unit)*3); padding:calc(var(--unit)*3) 0; border-bottom:1px solid var(--faint); text-decoration:none; align-items:start; }
+    .tool:hover { color:inherit; }
+    .tool:hover .name { color:var(--accent); }
+    .tool .num { color:var(--muted); font-size:var(--size-s); padding-top:.15em; }
+    .tool .name { font-weight:600; transition:color .15s; }
+    .tool .desc { color:var(--muted); margin-top:calc(var(--unit)*.5); max-width:38rem; }
+    .thumb { aspect-ratio:16/9; background-color:#1f8c68; position:relative; overflow:hidden;
+      background-image: linear-gradient(rgba(234,244,238,.9) 1px,transparent 1px), linear-gradient(90deg,rgba(234,244,238,.9) 1px,transparent 1px),
+                        linear-gradient(rgba(234,244,238,.3) 1px,transparent 1px), linear-gradient(90deg,rgba(234,244,238,.3) 1px,transparent 1px);
+      background-size:30px 30px,30px 30px,6px 6px,6px 6px; background-position:-1px -1px; }
+    .thumb::after { content:"Stay focused."; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); background:#1f8c68; color:#f4f8f5; font:400 11px/1 Georgia,serif; padding:6px 10px; white-space:nowrap; }
+    .soon .name, .soon .num { color:var(--muted); }
+    .soon { pointer-events:none; }
+    .foot { padding:calc(var(--unit)*4) var(--gutter); font-size:var(--size-s); color:var(--muted); display:flex; justify-content:space-between; gap:var(--unit); flex-wrap:wrap; }
+    @media (max-width: 640px) {
+      .head p { grid-column:1 / -1; }
+      .tool { grid-template-columns:2rem minmax(0,1fr); }
+      .thumb { grid-column:2; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="https://abdullahoguk.com.tr/">abdullahoguk</a>
+    <span class="muted">/ designtools</span>
+    <button class="theme" id="theme" type="button" aria-label="Açık/koyu tema">tema</button>
+  </header>
+
+  <main>
+    <div class="head">
+      <h1>Tasarım araçları<span class="en">Design tools</span></h1>
+      <p>Tarayıcıda çalışan küçük üreteçler ve araçlar. Kayıt yok, sunucu yok; ayarla, indir.<span class="en">Small generators and utilities that run in your browser. No sign-up, no server.</span></p>
+    </div>
+
+    <ul class="tools">
+      <li>
+        <a class="tool" href="/cuttingmatwallpaper/">
+          <span class="num">01</span>
+          <span>
+            <span class="name">Cutting Mat Wallpaper</span>
+            <span class="en">Kesim matı duvar kağıdı</span>
+            <p class="desc">Cetvel ızgaralı, alıntılı, ışık gölgeli duvar kağıtları. Telefon, tablet ve monitör boyutlarında PNG/JPG.</p>
+          </span>
+          <span class="thumb" aria-hidden="true"></span>
+        </a>
+      </li>
+      <li>
+        <div class="tool soon">
+          <span class="num">02</span>
+          <span><span class="name">Yakında</span><span class="en">More soon</span></span>
+        </div>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="foot">
+    <span>© Abdullah Öğük</span>
+    <a href="https://abdullahoguk.com.tr/">abdullahoguk.com.tr</a>
+  </footer>
+
+  <script>
+    document.getElementById('theme').addEventListener('click', function () {
+      var r = document.documentElement;
+      var cur = r.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var next = cur === 'dark' ? 'light' : 'dark';
+      r.dataset.theme = next;
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  </script>
+</body>
+</html>

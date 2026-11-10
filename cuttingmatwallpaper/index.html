@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cutting Mat Wallpaper · Design Tools</title>
+  <meta name="description" content="Kesim matı desenli, kişiselleştirilebilir duvar kağıdı oluşturucu. Telefon, tablet ve monitör boyutlarında PNG/JPG indir. Cutting mat wallpaper generator.">
+  <meta name="author" content="Abdullah Öğük">
+  <meta property="og:title" content="Cutting Mat Wallpaper Generator">
+  <meta property="og:description" content="Cetvel ızgaralı, açı kılavuzlu, alıntılı ve ışıklı duvar kağıtları oluştur.">
+  <script>
+    (function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}})();
+  </script>
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1a18">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f2efe8">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231f8c68'/%3E%3Cpath d='M8 0v32M16 0v32M24 0v32M0 8h32M0 16h32M0 24h32' stroke='%23eaf4ee' stroke-width='1' opacity='.7'/%3E%3Cpath d='M0 32 32 0' stroke='%23fff' stroke-width='1.6'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300..700;1,300..700&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&amp;family=Instrument+Serif:ital@0;1&amp;family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=DM+Serif+Display:ital@0;1&amp;family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Playfair+Display:ital,wght@0,400..700;1,400..700&amp;family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;family=Geist:wght@300..700&amp;family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;family=Space+Grotesk:wght@300..700&amp;family=Bricolage+Grotesque:opsz,wght@12..96,300..700&amp;family=Manrope:wght@300..700&amp;family=Syne:wght@400..700&amp;family=JetBrains+Mono:ital,wght@0,300..700;1,300..700&amp;family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;family=Geist+Mono:wght@300..700&amp;display=swap">
+  <link rel="stylesheet" href="/cuttingmatwallpaper/style.css">
+</head>
+<body>
+  <!-- Section icons: 24×24, 1.25 stroke, no fill -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-size" viewBox="0 0 24 24"><path d="M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5"/><rect x="7" y="7" width="10" height="10"/></symbol>
+      <symbol id="i-colour" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-pattern" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></symbol>
+      <symbol id="i-guides" viewBox="0 0 24 24"><path d="M3 21h18M3 21V3"/><path d="M3 9a12 12 0 0 1 12 12"/><path d="M3 21 17 7"/><path d="M3 21 20 14" stroke-dasharray="2 2"/></symbol>
+      <symbol id="i-type" viewBox="0 0 24 24"><path d="M4 6V4h16v2M12 4v16M9 20h6"/></symbol>
+      <symbol id="i-light" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></symbol>
+      <symbol id="i-export" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="top">
+    <nav class="crumbs" aria-label="Konum">
+      <a class="site" href="https://abdullahoguk.com.tr/">abdullahoguk</a>
+      <span class="sep first">/</span>
+      <a href="/">designtools</a>
+      <span class="sep">/</span>
+      <span class="here">cutting mat wallpaper</span>
+    </nav>
+    <span class="spacer"></span>
+    <div class="actions">
+      <button class="tbtn" id="btn-random" type="button">Rastgele</button>
+      <button class="tbtn hide-sm" id="btn-share" type="button">Linki kopyala</button>
+      <button class="tbtn strong" id="btn-download-top" type="button">İndir ↓</button>
+      <button class="tbtn theme-toggle" id="btn-theme" type="button" aria-label="Açık/koyu tema">Tema</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="stage" id="stage" aria-label="Önizleme">
+      <div class="frame" id="frame">
+        <canvas id="preview" aria-label="Duvar kağıdı önizlemesi"></canvas>
+        <div class="lock" id="lock" aria-hidden="true">
+          <div class="lock-date" id="lock-date"></div>
+          <div class="lock-time">9:41</div>
+        </div>
+      </div>
+      <p class="meta"><span id="meta"></span><span id="meta-r"></span></p>
+    </section>
+
+    <aside class="panel" id="panel">
+      <div class="intro">
+        <h1>Cutting Mat<br>Wallpaper</h1>
+        <p>Kesim matı duvar kağıdı üreteci. Izgara, açı kılavuzları, söz ve ışık; her ekran boyutunda.<span class="en">Cutting mat wallpaper generator for every screen.</span></p>
+      </div>
+
+      <section class="group">
+        <div class="g-head"><svg class="ico"><use href="#i-size"/></svg><span class="num">01</span></div>
+        <h2>Boyut<span class="en">Size</span></h2>
+        <label class="field">
+          <span>Cihaz / ekran</span>
+          <select id="preset"></select>
+        </label>
+        <div class="row custom-size" id="custom-size">
+          <label class="field"><span>Genişlik px</span><input type="number" data-k="w" min="200" max="8192" step="1"></label>
+          <label class="field"><span>Yükseklik px</span><input type="number" data-k="h" min="200" max="8192" step="1"></label>
+        </div>
+        <div><button class="tbtn" id="btn-rotate" type="button">↻ Yönü çevir</button></div>
+      </section>
+
+      <section class="group">
+        <div class="g-head"><svg class="ico"><use href="#i-colour"/></svg><span class="num">02</span></div>
+        <h2>Renk<span class="en">Colour</span></h2>
+        <div class="swatches" id="swatches"></div>
+        <div class="row three">
+          <label class="field color"><span>Zemin</span><input type="color" data-k="bg"></label>
+          <label class="field color"><span>Çizgi</span><input type="color" data-k="line"></label>
+          <label class="field color"><span>Metin</span><input type="color" data-k="text"></label>
+        </div>
+      </section>
+
+      <section class="group">
+        <div class="g-head"><svg class="ico"><use href="#i-pattern"/></svg><span class="num">03</span></div>
+        <h2>Desen<span class="en">Pattern</span></h2>
+        <div class="seg" role="radiogroup" aria-label="Desen">
+          <label><input type="radio" name="pattern" data-k="pattern" value="grid"><span>Izgara</span></label>
+          <label><input type="radio" name="pattern" data-k="pattern" value="cross"><span>Artı</span></label>
+          <label><input type="radio" name="pattern" data-k="pattern" value="gridcross"><span>Karma</span></label>
+          <label><input type="radio" name="pattern" data-k="pattern" value="dots"><span>Nokta</span></label>
+          <label><input type="radio" name="pattern" data-k="pattern" value="plain"><span>Düz</span></label>
+        </div>
+        <label class="field"><span>Hücre sayısı <output data-o="density"></output></span><input type="range" data-k="density" min="4" max="60" step="1"></label>
+        <label class="field"><span>Ana çizgi aralığı <output data-o="major"></output></span><input type="range" data-k="major" min="2" max="10" step="1"></label>
+        <label class="field"><span>Çizgi belirginliği <output data-o="lineOpacity"></output></span><input type="range" data-k="lineOpacity" min="5" max="100" step="1"></label>
+        <div class="toggles">
+          <label class="tog"><input type="checkbox" data-k="sub"><span>Ara bölmeler</span></label>
+          <label class="tog"><input type="checkbox" data-k="frame"><span>Çerçeve</span></label>
+        </div>
+      </section>
+
+      <section class="group">
+        <div class="g-head"><svg class="ico"><use href="#i-guides"/></svg><span class="num">04</span></div>
+        <h2>Kılavuzlar<span class="en">Guides</span></h2>
+        <div class="toggles">
+          <label class="tog"><input type="checkbox" data-k="rulers"><span>Cetvel &amp; tikler</span></label>
+          <label class="tog"><input type="checkbox" data-k="diagonal"><span>45° köşegen</span></label>
+          <label class="tog"><input type="checkbox" data-k="angles"><span>Açı çizgileri</span></label>
+          <label class="tog"><input type="checkbox" data-k="arcs"><span>Yarıçap yayları</span></label>
+          <label class="tog"><input type="checkbox" data-k="arcTicks"><span>Yay işaretleri</span></label>
+          <label class="tog"><input type="checkbox" data-k="sideLabel"><span>Kenar yazısı</span></label>
+        </div>
+        <div class="row">
+          <label class="field"><span>Açı merkezi</span>
+            <select data-k="guideOrigin">
+              <option value="bl">Sol alt köşe</option>
+              <option value="br">Sağ alt köşe</option>
+              <option value="both">İki alt köşe</option>
+              <option value="four">Dört köşe</option>
+              <option value="center">Merkez · iletki</option>
+            </select>
+          </label>
+          <label class="field"><span>Cetvel sayıları</span>
+            <select data-k="rulerStep">
+              <option value="cell">Her hücre</option>
+              <option value="major">Ana çizgiler</option>
+            </select>
+          </label>
+        </div>
+        <label class="field"><span>Açı aralığı <output data-o="angleStep"></output></span><input type="range" data-k="angleStep" min="5" max="45" step="5"></label>
+        <label class="field"><span>Yarıçaplar <small>hücre · boş = otomatik</small></span><input type="text" data-k="arcRadii" placeholder="örn. 10, 20, 30" spellcheck="false" inputmode="decimal"></label>
+        <label class="field" id="side-text-field"><span>Kenar yazısı</span><textarea data-k="sideText" rows="2" spellcheck="false"></textarea></label>
+      </section>
+
+      <section class="group">
+        <div class="g-head"><svg class="ico"><use href="#i-type"/></svg><span class="num">05</span></div>
+        <h2>Metin<span class="en">Type</span></h2>
+        <div class="toggles">
+          <label class="tog"><input type="checkbox" data-k="quoteOn"><span>Ana söz</span></label>
+          <label class="tog"><input type="checkbox" data-k="bodyOn"><span>Açıklama</span></label>
+          <label class="tog"><input type="checkbox" data-k="textBox"><span>Arkasını temizle</span></label>
+          <label class="tog"><input type="checkbox" data-k="fontItalic"><span>İtalik</span></label>
+        </div>
+        <label class="field"><span>Hazır sözler</span><select id="quote-preset"></select></label>
+        <label class="field"><span>Söz <small>Enter = yeni satır</small></span><textarea data-k="quote" rows="2"></textarea></label>
+        <div class="row">
+          <label class="field"><span>Yazı tipi</span><select data-k="font" id="font-select"></select></label>
+          <label class="field"><span>Kalınlık</span>
+            <select data-k="fontWeight">
+            <option value="300">İnce · 300</option>
+            <option value="400">Normal · 400</option>
+            <option value="500">Orta · 500</option>
+            <option value="600">Yarı kalın · 600</option>
+            <option value="700">Kalın · 700</option>
+            </select>
+          </label>
+        </div>
+        <label class="field"><span>Yazı boyutu <output data-o="fontSize"></output></span><input type="range" data-k="fontSize" min="1.5" max="14" step="0.1"></label>
+        <label class="field"><span>Dikey konum <output data-o="textY"></output></span><input type="range" data-k="textY" min="5" max="95" step="1"></label>
+        <label class="field"><span>Açıklama metni</span><textarea data-k="body" rows="3"></textarea></label>
+        <div class="row">
+          <label class="field"><span>Açıklama kalınlığı</span>
+            <select data-k="bodyWeight">
+            <option value="300">İnce · 300</option>
+            <option value="400">Normal · 400</option>
+            <option value="500">Orta · 500</option>
+            <option value="600">Yarı kalın · 600</option>
+            <option value="700">Kalın · 700</option>
+            </select>
+          </label>
+          <label class="field"><span>Açıklama konumu</span>
+          <select data-k="bodyPos">
+            <option value="br">Sağ alt</option>
+            <option value="bl">Sol alt</option>
+            <option value="bc">Orta alt</option>
+            <option value="tr">Sağ üst</option>
+          </select>
+        </label>
+        </div>
+      </section>
+
+      <section class="group">
+        <div class="g-head"><svg class="ico"><use href="#i-light"/></svg><span class="num">06</span></div>
+        <h2>Işık<span class="en">Light &amp; texture</span></h2>
+        <p class="sub">Düşen ışık</p>
+        <div class="seg" role="radiogroup" aria-label="Düşen ışık">
+          <label><input type="radio" name="light" data-k="light" value="none"><span>Yok</span></label>
+          <label><input type="radio" name="light" data-k="light" value="spot"><span>Spot</span></label>
+          <label><input type="radio" name="light" data-k="light" value="window"><span>Pencere</span></label>
+        </div>
+        <p class="sub">Gölge deseni</p>
+        <div class="seg" role="radiogroup" aria-label="Gölge deseni">
+          <label><input type="radio" name="light" data-k="light" value="blinds"><span>Jaluzi</span></label>
+          <label><input type="radio" name="light" data-k="light" value="leaves"><span>Yaprak</span></label>
+          <label><input type="radio" name="light" data-k="light" value="mixed"><span>Karışık</span></label>
+        </div>
+        <div class="light-controls" id="light-controls">
+          <label class="field"><span>Yoğunluk <output data-o="lightIntensity"></output></span><input type="range" data-k="lightIntensity" min="0" max="100" step="1"></label>
+          <label class="field"><span>Yumuşaklık <output data-o="lightSoftness"></output></span><input type="range" data-k="lightSoftness" min="0" max="100" step="1"></label>
+          <label class="field"><span>Açı <output data-o="lightAngle"></output></span><input type="range" data-k="lightAngle" min="-90" max="90" step="1"></label>
+          <div id="light-pos">
+            <div class="row">
+              <label class="field"><span>Yatay <output data-o="lightX"></output></span><input type="range" data-k="lightX" min="0" max="100" step="1"></label>
+              <label class="field"><span>Dikey <output data-o="lightY"></output></span><input type="range" data-k="lightY" min="0" max="100" step="1"></label>
+            </div>
+            <label class="field"><span>Işık boyutu <output data-o="lightSize"></output></span><input type="range" data-k="lightSize" min="0" max="100" step="1"></label>
+          </div>
+          <div class="field"><button class="tbtn" id="btn-seed" type="button" style="align-self:flex-start">⟲ Varyasyonu karıştır</button></div>
+        </div>
+        <label class="field"><span>Gren <output data-o="grain"></output></span><input type="range" data-k="grain" min="0" max="100" step="1"></label>
+        <label class="field"><span>Vinyet <output data-o="vignette"></output></span><input type="range" data-k="vignette" min="0" max="100" step="1"></label>
+        <div class="toggles">
+          <label class="tog" style="grid-column:1 / -1"><input type="checkbox" data-k="lockscreen"><span>Önizlemede kilit ekranı saati</span></label>
+        </div>
+      </section>
+
+      <section class="group">
+        <div class="g-head"><svg class="ico"><use href="#i-export"/></svg><span class="num">07</span></div>
+        <h2>Dışa aktar<span class="en">Export</span></h2>
+        <label class="field"><span>Format</span>
+          <select data-k="format">
+            <option value="png">PNG · kayıpsız</option>
+            <option value="jpg">JPG · küçük dosya</option>
+          </select>
+        </label>
+        <button class="block-btn" id="btn-download" type="button"><span>Duvar kağıdını indir</span><span class="k">⌘S</span></button>
+        <p class="hint" id="export-hint"></p>
+        <div class="foot-actions">
+          <button class="tbtn" id="btn-reset" type="button">Varsayılana dön</button>
+        </div>
+      </section>
+
+      <p class="colophon">Tarayıcında çalışır, hiçbir şey sunucuya gönderilmez. Ayarlar adres çubuğunda saklanır; linki paylaşabilirsin.<span class="en">Runs entirely in your browser. Settings live in the URL.</span></p>
+    </aside>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="/cuttingmatwallpaper/app.js" defer></script>
+</body>
+</html>
